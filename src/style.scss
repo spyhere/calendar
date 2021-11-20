@@ -1,0 +1,180 @@
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+}
+
+.calendar-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  box-shadow: 0 8px 11px rgba(0,0,0,0.8);
+  border: 1px #999;
+  display: flex;
+  flex-direction: column;
+  width: 1000px;
+  max-width: 70vw;
+  background: rgb(235,235,255);
+  background: linear-gradient(0deg, rgba(235,235,255,1) 0%, rgba(255,255,255,1) 100%);
+
+  header {
+    height: 65px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 10px;
+    border-bottom: 1px solid;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 400;
+  }
+
+  .all-day {
+    height: 45px;
+    background: #ddd;
+    border-bottom: 1px solid;
+    padding-left: 175px;
+    display: flex;
+
+    .task {
+      width: auto;
+      min-width: 20%;
+      height: inherit;
+      flex-grow: 1;
+
+      .description {
+        padding: 5px;
+      }
+    }
+  }
+
+  .time-division {
+    height: 34px;
+
+    &:before {
+      content: '';
+      display: block;
+      border-top: 1px solid #999;
+    }
+  }
+
+  .am, .pm {
+    display: flex;
+    flex-direction: column;
+    margin: 0 100px;
+    font-size: 15px;
+    font-weight: 500;
+
+    div:nth-child(2n + 1) {
+      margin-left: 5%;
+      font-weight: 400;
+      font-size: 13px;
+      color: #444;
+    }
+
+    div:nth-child(2) {
+      &:before {
+        border: none;
+      }
+    }
+
+    .meridiem {
+      position: relative;
+
+      h1 {
+        position: absolute;
+        margin: 0;
+        left: -112px;
+        top: 35px;
+        font-weight: 500;
+        font-size: 35px;
+      }
+    }
+  }
+
+  .am .meridiem {
+    color: brown !important;
+  }
+  .pm .meridiem {
+    color: deepskyblue !important;
+  }
+
+  .pm {
+    padding-bottom: 10px;
+  }
+
+  hr {
+    margin: 0;
+    border-color: #00f;
+  }
+
+}
+
+.task {
+  margin-left: 10px;
+  position: relative;
+  opacity: 0.9;
+  background: #fff;
+  width: 100%;
+  min-height: 40px;
+  border-left: 7px solid #0f0;
+  box-sizing: border-box;
+  white-space: nowrap;
+  overflow: hidden;
+
+  .description {
+    display: flex;
+    height: -webkit-fill-available;
+    width: fit-content;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-between;
+    padding: 5px;
+
+    .time {
+      font-size: 14px;
+      color: #555;
+      font-weight: 300;
+      width: fit-content;
+      margin-right: 10px;
+    }
+
+    .title {
+      font-size: 13px;
+      font-weight: 600;
+      width: fit-content;
+      margin-right: 10px;
+    }
+
+    .location {
+      font-size: 13px;
+      font-weight: 600;
+      color: green;
+      width: fit-content;
+    }
+  }
+}
+
+.tasksDivision {
+  position: relative;
+  margin: 0 100px 0 175px;
+
+  .taskContainer {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    left: 0;
+    min-height: 40px;
+    transition-duration: 1s;
+
+  }
+
+}
+
+
